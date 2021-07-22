@@ -1,9 +1,9 @@
 # Processamento Digital de Imagens com OpenCV
 
-Esse artigo tem como objetivo implementar técnicas de Processamento Digital de Imagens aprendidas na disciplina de Processamento Digital Imagem do curso de Engenharia da Computação da UFRN. Em todos os exemplos foi utilizado a linguagem C++ junto com a biblioteca OpenCV.
+Esse artigo tem como objetivo implementar técnicas de Processamento Digital de Imagens aprendidas na disciplina de Processamento Digital de Imagens do curso de Engenharia da Computação da UFRN. Em todos os exemplos foi utilizado a linguagem C++ junto com a biblioteca OpenCV.
 
 ## Exemplo 1 : Negativo de uma região.
-Neste exemplo, temos o programa regions.cpp que recebe do usuário coordenadas cartesianas de dois pontos que serão vértices opostos em diagonal. Portanto, com o retângulo criado, será feito a inversão do tom de cinza dos respectivos pixels da região. Para o cálculo da inversão basta implementar o complementar do pixel em questão: C = 255 - P.
+Neste exemplo, temos o programa regions.cpp que recebe do usuário coordenadas cartesianas de dois pontos que devem ser vértices opostos em diagonal. Portanto, com o retângulo criado, será feito a inversão do tom de cinza dos respectivos pixels da região. Para o cálculo da inversão basta implementar o complementar do pixel em questão: C = 255 - P.
 
 ~~~c++
 #include <iostream>
@@ -66,8 +66,8 @@ int main(int, char** argv){
 
 ## Exemplo 2: Troca quadrante.
 
-Aqui está implementado o programa trocaregions.cpp, ele troca dos quadrantes em diagonal da imagem de entrada, além disso faz o plot dos quadrantes. Em sua implementação é aproveitado os contrutores e métodos disponíveis na biblioteca OpenCV. Em primeiro lugar, é realizado a separação dos quadrantes em quatro imagens,
-após isso, a união com o método _copyTo_ com as ordens trocadas.
+Aqui está implementado o programa trocaregions.cpp, ele troca os quadrantes em diagonal da imagem de entrada, além disso faz o plot deles e da imagem resultante. Em sua implementação é aproveitado os construtores e métodos disponíveis na biblioteca OpenCV. Em primeiro lugar, é realizado a separação dos quadrantes em quatro imagens,
+após isso, é feito a união com o método _copyTo_ já considerando a troca.
 
 ~~~c++
 
@@ -255,7 +255,7 @@ int main(int argc, char** argv){
 
 ## Exemplo 4.2: Detecção de Movimentos
 
-Nessa etapa, é feita a detecção de movimentos com o programa motiondetector.cpp utilizando a comparação de dois histogramas calculados em dois intantes diferentes, para isso é chamado o método _compareHist_ utilizando a comparação por correlação. O programa está calibrado para detectar movimento quando o retorno do método chamado for menor do _0.996500_.
+Nessa etapa, é feita a detecção de movimentos com o programa motiondetector.cpp utilizando a comparação de dois histogramas calculados em dois instantes diferentes, para isto, é chamado o método _compareHist_ utilizando a comparação por correlação. O programa está calibrado para detectar movimentos quando o retorno do método chamado for menor do que _0.996500_.
 
 ~~~c++
 
