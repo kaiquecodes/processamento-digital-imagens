@@ -1,1 +1,1 @@
-# artigo-pdi
+# Processamento Digital de Imagens
