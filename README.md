@@ -1,10 +1,10 @@
 # Processamento Digital de Imagens com OpenCV
 
-Esse artigo tem como objetivo implementar técnicas de Processamento Digital de Imagens aprendidas na disciplina de Processamento Digital Imagem do curso de Engenharia da Computação da UFRN.
+Esse artigo tem como objetivo implementar técnicas de Processamento Digital de Imagens aprendidas na disciplina de Processamento Digital Imagem do curso de Engenharia da Computação da UFRN. Em todos os exemplos foi utilizado a linguagem C++ junto com a biblioteca OpenCV.
 
-## Exemplo 1
+## Exemplo 1 : Negativo de uma região.
+Neste exemplo, temos o programa regions.cpp que recebe do usuário coordenadas cartesianas de dois pontos que serão vértices opostos em diagonal. Portanto, com o retângulo criado, será feito a inversão do tom de cinza dos respectivos pixels da região. Para o cálculo da inversão basta implementar o complementar do pixel em questão: C = 255 - P.
 
-Utilizando o programa exemplos/pixels.cpp como referência, implemente um programa regions.cpp. Esse programa deverá solicitar ao usuário as coordenadas de dois pontos P1 e P2 localizados dentro dos limites do tamanho da imagem e exibir que lhe for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos pelos pontos P1 e P2 será exibida com o negativo da imagem na região correspondente.
 ~~~c++
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -58,7 +58,11 @@ int main(int, char** argv){
 
 <img src="img/ex1-original.png" alt="ex1-original" width = 450px>
 
+###### Figura 1: Foto original RGB.
+
 <img src="img/ex1-resultado.png" alt="ex1-resultado" width = 450px>
+
+###### Figura 2: Foto em GrayScale com o retângulo negativo.
 
 ## Exemplo 2
 
