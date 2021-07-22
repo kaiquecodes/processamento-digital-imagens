@@ -54,11 +54,9 @@ int main(int, char** argv){
 
 ~~~
 
+<img src="img/ex1-original.png" alt="ex1-original" width = 450px>
 
-![ex1-original](img/ex1-original.png)
-
-![ex1-resultado](img/ex1-resultado.png)
-
+<img src="img/ex1-resultado.png" alt="ex1-resultado" width = 450px>
 
 ## Exemplo 2
 
@@ -127,6 +125,8 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
   return 0;
 }
 ~~~
+
+<img src="img/ex1-original.png" alt="ex1-original" width = 450px>
 
 ![ex2-original](img/ex2-original.png)
 
