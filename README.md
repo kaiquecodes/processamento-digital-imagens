@@ -360,7 +360,6 @@ int main(int argc, char** argv){
 }
 ~~~
 
-### Veja o resultado clicando na imagem abaixo:
 ![motion](img/Motion.gif)
 ###### Figura 7: Resultado do Detector de Movimentos.
 
