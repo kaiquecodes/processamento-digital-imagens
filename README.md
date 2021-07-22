@@ -67,7 +67,7 @@ int main(int, char** argv){
 ## Exemplo 2: Troca quadrante.
 
 Aqui está implementado o programa trocaregions.cpp, ele troca dos quadrantes em diagonal da imagem de entrada, além disso faz o plot dos quadrantes. Em sua implementação é aproveitado os contrutores e métodos disponíveis na biblioteca OpenCV. Em primeiro lugar, é realizado a separação dos quadrantes em quatro imagens,
-após isso, a união com o método copyTo com as ordens trocadas.
+após isso, a união com o método _copyTo_ com as ordens trocadas.
 
 ~~~c++
 
@@ -141,7 +141,10 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 ![ex2-resultado](img/ex2-result.png)
 ###### Figura 4: Foto em Grayscale com os quadrantes trocados.
 
-## Exemplo 4.1
+## Exemplo 4.1: Equalização de Histograma
+
+Está é a implementação do programa equalize.cpp, o objetivo dele é apartir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização
+do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado atráveis do método _calcHist_. Por fim, é criado um novo histograma equalizado atráves do método _equalizeHist_. Ambos os hitogramas são plotados na própria janela de exibição da imagem.
 
 ~~~c++
 #include <iostream>
@@ -245,10 +248,14 @@ int main(int argc, char** argv){
 ~~~
 
 ![ex4-1-original](img/ex4-1-original.png)
+###### Figura 5: Imagem em GrayScale juntamente com seu histograma.
 
 ![ex4-2-original](img/ex4-2-result.png)
+###### Figura 6: Imagem em GrayScale com seu histograma equalizado.
 
-## Exemplo 4.2
+## Exemplo 4.2: Detecção de Movimentos
+
+Nessa etapa, é feita a detecção de movimentos utilizando a comparação de dois histogramas calculados em dois intantes diferentes, para isso é chamado o método _compareHist_ utilizando a comparação por correlação. O programa está calibrado para detectar movimento quando o retorno do método chamado for menor do _0.996500_.
 
 ~~~c++
 
