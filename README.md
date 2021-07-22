@@ -255,7 +255,7 @@ int main(int argc, char** argv){
 
 ## Exemplo 4.2: Detecção de Movimentos
 
-Nessa etapa, é feita a detecção de movimentos utilizando a comparação de dois histogramas calculados em dois intantes diferentes, para isso é chamado o método _compareHist_ utilizando a comparação por correlação. O programa está calibrado para detectar movimento quando o retorno do método chamado for menor do _0.996500_.
+Nessa etapa, é feita a detecção de movimentos com o programa motiondetector.cpp utilizando a comparação de dois histogramas calculados em dois intantes diferentes, para isso é chamado o método _compareHist_ utilizando a comparação por correlação. O programa está calibrado para detectar movimento quando o retorno do método chamado for menor do _0.996500_.
 
 ~~~c++
 
