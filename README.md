@@ -126,8 +126,6 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 }
 ~~~
 
-<img src="img/ex1-original.png" alt="ex1-original" width = 450px>
-
 ![ex2-original](img/ex2-original.png)
 
 ![ex2-resultado](img/ex2-result.png)
