@@ -348,5 +348,5 @@ int main(int argc, char** argv){
 [![Video](img/video.png)](https://www.youtube.com/watch?v=SojneETYbbw)
 
 
-Feito por [Kaíquecodes.](kaiquecodes.github.io)
+Feito por [Kaíquecodes.](https://kaiquecodes.github.io)
 
