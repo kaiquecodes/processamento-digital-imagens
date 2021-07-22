@@ -64,7 +64,10 @@ int main(int, char** argv){
 
 ###### Figura 2: Foto em GrayScale com o retângulo negativo.
 
-## Exemplo 2
+## Exemplo 2: Troca quadrante.
+
+Aqui está implementado o programa trocaregions.cpp, ele troca dos quadrantes em diagonal da imagem de entrada, além disso faz o plot dos quadrantes. Em sua implementação é aproveitado os contrutores e métodos disponíveis na biblioteca OpenCV. Em primeiro lugar, é realizado a separação dos quadrantes em quatro imagens,
+após isso, a união com o método copyTo com as ordens trocadas.
 
 ~~~c++
 
