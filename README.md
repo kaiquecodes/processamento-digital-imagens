@@ -136,8 +136,10 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 ~~~
 
 ![ex2-original](img/ex2-original.png)
+###### Figura 3: Foto original RGB.
 
 ![ex2-resultado](img/ex2-result.png)
+###### Figura 4: Foto em Grayscale com os quadrantes trocados.
 
 ## Exemplo 4.1
 
