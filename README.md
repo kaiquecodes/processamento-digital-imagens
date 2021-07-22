@@ -344,4 +344,8 @@ int main(int argc, char** argv){
 }
 ~~~
 
+### Veja o resultado clicando na imagem abaixo:
+[![Video](img/video.png)](https://www.youtube.com/watch?v=SojneETYbbw)
+
+
 
