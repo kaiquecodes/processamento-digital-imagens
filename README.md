@@ -361,7 +361,8 @@ int main(int argc, char** argv){
 ~~~
 
 ### Veja o resultado clicando na imagem abaixo:
-[![Video](img/video.png)](https://www.youtube.com/watch?v=SojneETYbbw)
+![motion](img/motion.gif)
+###### Figura 7: Resultado do Detector de Movimentos.
 
 
 Feito por [Kaíquecodes.](https://kaiquecodes.github.io)
