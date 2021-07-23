@@ -245,10 +245,10 @@ int main(int argc, char** argv){
 ![bolhas](img/sem-borda.png)
 ###### Figura 6: Imagem sem as bolhas que tocam a borda.
 
-![saída](img/labeling.png.png)
+![imagem-saída](img/labeling.png)
 ###### Figura 7: Imagem de saída.
 
-![saída](img/saida.png)
+![resultado](img/saida.png)
 ###### Figura 8: Resultado da Contagem.
 
 ## Exemplo 4.1: Equalização de Histograma
