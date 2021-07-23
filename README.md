@@ -141,9 +141,9 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 ![ex2-resultado](img/ex2-result.png)
 ###### Figura 4: Foto em Grayscale com os quadrantes trocados.
 
-## Exemplo 3.1: Se a figura 5 tiver mais de 255 bolhas, e agora?
+## Exemplo 3.1: A figura 5 tem mais de 255 bolhas, e agora?
 
-Já que estamos trabalhando em GrayScale, da rótulo poderá ir até 255. Se o número de bolhas for maior que 255, essas não serão contadas. Para resolver esse problema, podemos manipular a imagem em RBG, pois cada canal posseui 255 tons, sendo assim o novo limite de bolhas será 255x255x255.
+Já que estamos trabalhando em GrayScale, o rótulo poderá ir até 255. Se o número de bolhas for maior que 255, essas não serão contadas. Para resolver esse problema, podemos manipular a imagem em RGB, pois cada canal posseui 255 tons, sendo assim o novo limite de bolhas será 255x255x255.
 
 ## Exemplo 3.2: Preenchendo regiões
 
