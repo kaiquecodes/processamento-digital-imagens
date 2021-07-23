@@ -141,9 +141,17 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 ![ex2-resultado](img/ex2-result.png)
 ###### Figura 4: Foto em Grayscale com os quadrantes trocados.
 
+## Exemplo 3.1: Se a figura 5 tiver mais de 255 bolhas, e agora?
+
+Já que estamos trabalhando em GrayScale, da rótulo poderá ir até 255. Se o número de bolhas for maior que 255, essas não serão contadas. Para resolver esse problema, podemos manipular a imagem em RBG, pois cada canal posseui 255 tons, sendo assim o novo limite de bolhas será 255x255x255.
+
+## Exemplo 3.2: Preenchendo regiões
+
+Neste exemplo temos a seguinte situação: dada uma imagem conforme a figura 5, realizar a contagem de bolhas que contém buraco e as que não contém buraco. Inicialmente, foi retirada as bolhas que tocam as bordas da imagem visto que não é possível afirmar sobre a presença do buraco nelas. Após isso, foi aplicado o método _floodFill_ para rotular as bolhas com tons de cinzas diferentes ao passo que uma variável auxiliar é incrementada _(nobjects)_. Em seguida, foi utilizado o método _floodFill_ com a semente no ponto (0,0) para o preenchimento do fundo da imagem com a cor 255. Agora, temos o fundo da imagem com a cor branca, as bolhas com tons de cinza diferentes e se há buraco na bolha, podemos garantir que ele tem a cor preta. Por fim, basta realizar uma nova rotulação para contar a quantidade de regiões pretas, para assim determinar o número de bolhas com buracos.
+
 ## Exemplo 4.1: Equalização de Histograma
 
-Está é a implementação do programa equalize.cpp, o objetivo dele é a partir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado através do método _calcHist_. Por fim, é criado um novo histograma equalizado através do método _equalizeHist_. Ambos os histogramas são plotados na própria janela de exibição da imagem.
+Esta é a implementação do programa equalize.cpp, o objetivo dele é a partir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado através do método _calcHist_. Por fim, é criado um novo histograma equalizado através do método _equalizeHist_. Ambos os histogramas são plotados na própria janela de exibição da imagem.
 
 ~~~c++
 #include <iostream>
