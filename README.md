@@ -143,8 +143,7 @@ image1.copyTo(imageS(Rect(width/2-1,height/2-1, width/2, height/2)));
 
 ## Exemplo 4.1: Equalização de Histograma
 
-Está é a implementação do programa equalize.cpp, o objetivo dele é apartir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização
-do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado atráveis do método _calcHist_. Por fim, é criado um novo histograma equalizado atráves do método _equalizeHist_. Ambos os hitogramas são plotados na própria janela de exibição da imagem.
+Está é a implementação do programa equalize.cpp, o objetivo dele é a partir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado através do método _calcHist_. Por fim, é criado um novo histograma equalizado através do método _equalizeHist_. Ambos os histogramas são plotados na própria janela de exibição da imagem.
 
 ~~~c++
 #include <iostream>
