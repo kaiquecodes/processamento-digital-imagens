@@ -149,6 +149,105 @@ Já que estamos trabalhando em GrayScale, da rótulo poderá ir até 255. Se o n
 
 Neste exemplo temos a seguinte situação: dada uma imagem conforme a figura 5, realizar a contagem de bolhas que contém buraco e as que não contém buraco. Inicialmente, foi retirada as bolhas que tocam as bordas da imagem visto que não é possível afirmar sobre a presença do buraco nelas. Após isso, foi aplicado o método _floodFill_ para rotular as bolhas com tons de cinzas diferentes ao passo que uma variável auxiliar é incrementada _(nobjects)_. Em seguida, foi utilizado o método _floodFill_ com a semente no ponto (0,0) para o preenchimento do fundo da imagem com a cor 255. Agora, temos o fundo da imagem com a cor branca, as bolhas com tons de cinza diferentes e se há buraco na bolha, podemos garantir que ele tem a cor preta. Por fim, basta realizar uma nova rotulação para contar a quantidade de regiões pretas, para assim determinar o número de bolhas com buracos.
 
+~~~c++
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv){
+  Mat image,image2,realce;
+  int width, height;
+  int nobjects;
+  
+  Point p;
+  image = imread(argv[1], IMREAD_GRAYSCALE);
+  
+  if(!image.data){
+    cout << "imagem nao carregou corretamente\n";
+    return(-1);
+  }
+
+  width=image.cols;
+  height=image.rows;
+  cout << width << "x" << height << endl;
+
+  p.x=0;
+  p.y=0;
+
+//tirando as bolhas que tocam na borda da imagem
+  for(int i=0; i<height; i++){
+    for(int j=0; j<width; j++){
+      if(image.at<uchar>(i,j) == 255 && (i == 0 || i == height-1 || j == 0 || j == width-1)){
+        p.x=j;
+        p.y=i;
+        floodFill(image,p,0);
+      } 
+    }
+  }
+
+  image2 = image.clone();
+
+  //busca objetos presentes e rotula
+  nobjects=0;
+  for(int i=0; i<height; i++){
+    for(int j=0; j<width; j++){
+      if(image.at<uchar>(i,j) == 255){
+        // achou um objeto
+        nobjects++;
+        p.x=j;
+        p.y=i;
+  	// preenche o objeto com o contador
+	floodFill(image,p,nobjects);
+      }
+    }
+  }
+
+//alterando a cor do fundo
+  p.x=0;
+  p.y=0;
+  floodFill(image,p,255);
+
+//busca objetos presentes e rotula
+  int buracos=0;
+  for(int i=0; i<height; i++){
+    for(int j=0; j<width; j++){
+      if(image.at<uchar>(i,j) == 0){
+        // achou um objeto
+        buracos++;
+        p.x=j;
+        p.y=i;
+  		// preenche o objeto com o contador
+		  floodFill(image,p,buracos);
+      }
+    }
+  }
+  
+  cout << "Resultado da Contagem: " << endl;
+  cout << "A figura tem " << nobjects - buracos << " bolhas sem buraco" << endl;
+  cout << "e " << buracos << " bolhas com buraco." << endl;
+  equalizeHist(image, realce);
+  imshow("Imagem", image);
+  imshow("Imagem sem bolha na borda", image2);
+  imwrite("Imagem sem bolha na borda.png",image2);
+  imshow("realce", realce);
+  imwrite("labeling.png", image);
+  waitKey();
+
+  return 0;
+} 
+~~~
+
+![bolhas](img/bolhas.png)
+###### Figura 5: Imagem de entrada.
+
+![bolhas](img/sem-borda.png)
+###### Figura 6: Imagem sem as bolhas que tocam a borda.
+
+![saída](img/saida.png)
+###### Figura 7: Imagem de saída.
+
 ## Exemplo 4.1: Equalização de Histograma
 
 Esta é a implementação do programa equalize.cpp, o objetivo dele é a partir de uma imagem de entrada calcular seu histograma, após isso, fazer a técnica de equalização do histograma. Primeiramente, é utilizado a câmera do dispositivo para capturar a imagem, antes de calcular o histograma, é feita a conversão da imagem para tom de cinza. Depois seu histograma é calculado através do método _calcHist_. Por fim, é criado um novo histograma equalizado através do método _equalizeHist_. Ambos os histogramas são plotados na própria janela de exibição da imagem.
@@ -255,10 +354,10 @@ int main(int argc, char** argv){
 ~~~
 
 ![ex4-1-original](img/ex4-1-original.png)
-###### Figura 5: Imagem em GrayScale juntamente com seu histograma.
+###### Figura 8: Imagem em GrayScale juntamente com seu histograma.
 
 ![ex4-2-original](img/ex4-2-result.png)
-###### Figura 6: Imagem em GrayScale com seu histograma equalizado.
+###### Figura 9: Imagem em GrayScale com seu histograma equalizado.
 
 ## Exemplo 4.2: Detecção de Movimentos
 
@@ -368,7 +467,7 @@ int main(int argc, char** argv){
 ~~~
 
 ![motion](img/Motion.gif)
-###### Figura 7: Resultado do Detector de Movimentos.
+###### Figura 10: Resultado do Detector de Movimentos.
 
 ## Exemplo 5: Filtro Laplaciano do Gaussiano
 O objetivo desse exemplo é demostrar o filtro espacial laplaciano do gaussiano. No programa laplgauss.cpp, há um menu de filtros que podem ser aplicados via escolha do teclado, caso o usuário digitar a tecla k, a máscara setada será a do filtro laplaciano do gaussiano. Comparando as figuras 9 e 10, vemos que o filtro laplaciano do gaussiano acentua ainda mais os contornos das imagens.  
@@ -486,13 +585,13 @@ int main(int, char **) {
 ~~~
 
 ![original](img/original.png)
-###### Figura 8: Imagem de Entrada do Algoritmo.
+###### Figura 11: Imagem de Entrada do Algoritmo.
 
 ![llaplaciano](img/laplaciano.png)
-###### Figura 9: Resultado do Filtro Laplaciano.
+###### Figura 12: Resultado do Filtro Laplaciano.
 
 ![lapgauss](img/lapgauss.png)
-###### Figura 10: Resultado do Filtro Laplaciano do Gaussiano.
+###### Figura 13: Resultado do Filtro Laplaciano do Gaussiano.
 
 Feito por [Kaíquecodes.](https://kaiquecodes.github.io)
 
