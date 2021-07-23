@@ -245,8 +245,11 @@ int main(int argc, char** argv){
 ![bolhas](img/sem-borda.png)
 ###### Figura 6: Imagem sem as bolhas que tocam a borda.
 
-![saída](img/saida.png)
+![saída](img/labeling.png.png)
 ###### Figura 7: Imagem de saída.
+
+![saída](img/saida.png)
+###### Figura 8: Resultado da Contagem.
 
 ## Exemplo 4.1: Equalização de Histograma
 
@@ -354,10 +357,10 @@ int main(int argc, char** argv){
 ~~~
 
 ![ex4-1-original](img/ex4-1-original.png)
-###### Figura 8: Imagem em GrayScale juntamente com seu histograma.
+###### Figura 9: Imagem em GrayScale juntamente com seu histograma.
 
 ![ex4-2-original](img/ex4-2-result.png)
-###### Figura 9: Imagem em GrayScale com seu histograma equalizado.
+###### Figura 10: Imagem em GrayScale com seu histograma equalizado.
 
 ## Exemplo 4.2: Detecção de Movimentos
 
@@ -467,7 +470,7 @@ int main(int argc, char** argv){
 ~~~
 
 ![motion](img/Motion.gif)
-###### Figura 10: Resultado do Detector de Movimentos.
+###### Figura 11: Resultado do Detector de Movimentos.
 
 ## Exemplo 5: Filtro Laplaciano do Gaussiano
 O objetivo desse exemplo é demostrar o filtro espacial laplaciano do gaussiano. No programa laplgauss.cpp, há um menu de filtros que podem ser aplicados via escolha do teclado, caso o usuário digitar a tecla k, a máscara setada será a do filtro laplaciano do gaussiano. Comparando as figuras 9 e 10, vemos que o filtro laplaciano do gaussiano acentua ainda mais os contornos das imagens.  
@@ -585,13 +588,13 @@ int main(int, char **) {
 ~~~
 
 ![original](img/original.png)
-###### Figura 11: Imagem de Entrada do Algoritmo.
+###### Figura 12: Imagem de Entrada do Algoritmo.
 
 ![llaplaciano](img/laplaciano.png)
-###### Figura 12: Resultado do Filtro Laplaciano.
+###### Figura 13: Resultado do Filtro Laplaciano.
 
 ![lapgauss](img/lapgauss.png)
-###### Figura 13: Resultado do Filtro Laplaciano do Gaussiano.
+###### Figura 14: Resultado do Filtro Laplaciano do Gaussiano.
 
 Feito por [Kaíquecodes.](https://kaiquecodes.github.io)
 
