@@ -1,0 +1,46 @@
+<div class="book-summary">
+    <!-- <div id="book-search-input" role="search">
+        <input type="text" placeholder="Type to search" />
+    </div> -->
+    <nav role="navigation">
+        <ul class="summary">
+            {% if page.url == "/index.html" or page.url == "/" %}
+            
+            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+            {% else %}
+            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+              
+            {% endif %}
+                <a href="https://kaiquecodes.github.io/">
+                   Home
+                </a>
+                
+            </li>
+          
+
+            <li class="divider"></li>
+
+            <a class = "intro" href="../index.html">
+                Introdução
+           </a>
+                      
+            {% assign reversed_posts = site.posts | reverse %}        
+           
+            {% for post in reversed_posts %}
+                {% if page.url == post.url %}
+                <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                {% else %}
+                <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                {% endif %}
+                
+                    <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                    </a>
+                </li>
+            {% endfor %}
+                       
+        </ul>
+    </nav>
+</div>
+
+<link rel="stylesheet" type="text/css" href="/gitbook/new.css" media="screen" />
